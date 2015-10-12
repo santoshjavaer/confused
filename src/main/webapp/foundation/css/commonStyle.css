@@ -1,0 +1,896 @@
+body {
+  font-family: 'Glegoo', serif!important;
+}
+
+.container{margin-top: 110px;}
+.hide{display: none;}
+
+.margin-0{margin: 0 !important;}
+.margin-right-5{margin-right: 5px !important;}
+.margin-right-10{margin-right: 10px !important;}
+.margin-right-15{margin-right: 15px !important;}
+.margin-right-20{margin-right: 20px !important;}
+.margin-right-25{margin-right: 25px !important;}
+.margin-right-30{margin-right: 30px !important;}
+
+.margin-bottom-0{margin-bottom: 0 !important;}
+.margin-bottom-5{margin-bottom: 5px !important;}
+.margin-bottom-10{margin-bottom: 10px !important;}
+.margin-bottom-15{margin-bottom: 15px !important;}
+.margin-bottom-20{margin-bottom: 20px !important;}
+.margin-bottom-30{margin-bottom: 30px !important;}
+
+.margin-top-0{margin-top: 0 !important;}
+.margin-top-5{margin-top: 5px !important;}
+.margin-top-10{margin-top: 10px !important;}
+.margin-top-13{margin-top: 15px !important;}
+.margin-top-15{margin-top: 15px !important;}
+.margin-top-20{margin-top: 20px !important;}
+.margin-top-45{margin-top: 45px !important;}
+.margin-top-25{margin-top: 25px !important;}
+.margin-top-less-5{margin-top: -5px !important;}
+
+
+.padding-left-0{ padding-left: 0px;}
+.padding-right-0{padding-right: 0px;}
+.padding-top-10{padding-top: 10px !important;}
+.padding-bottom-10{padding-bottom: 10px !important;}
+
+
+
+.headerHight{
+	  height: 60px;
+}
+
+.headerHight a{
+	font-size: 30px;
+	color: white;
+	margin-top: 5px;
+}
+
+.headerHight ul li a{
+	font-family: 'Glegoo', serif!important;
+}
+
+.background{
+    background-image: url('../images/bg_admin_login.jpg');
+    background-repeat-y: inherit;
+    background-size: 100%;
+}
+
+.textDesign{
+	font-size: 23px;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	font-family: 'Slabo 27px', serif;
+  	line-height: 1.35;
+}
+
+
+
+.textDesign a,
+.textDesign h2,
+.quizeContentTitle h2,
+.quizeContentMenuTitle h2{
+	font-family: 'Glegoo', serif !important;
+}
+
+.maxWidth{
+	 max-width: 100%;
+	
+}
+
+.margin-top{
+	  margin-top: 15px;
+}
+.margin-buttom{
+	margin-bottom: 30px;
+}
+
+.footerLogo{
+	color: #858585;
+	font-weight: normal;
+	font-size: 0.88889rem;
+	display: inline-block;
+	float: none;
+	margin-right: 25px;
+	font-size: 30px;
+	
+}
+.logoInline{
+	display: inline-block;
+	margin-bottom: 0;
+	margin-top: 10px;
+	float: none;
+}
+
+.panelLayout{
+	background: linear-gradient(#f7f7f7 0%, #ececec 100%) !important;
+}
+
+
+/* Small screens */
+@media only screen { 
+	.paddingAdjust{
+	    padding-left: 10px;
+		padding-right: 10px;
+		padding-top: 0px;
+	}
+	
+	.textDesign {
+		  font-size: 23px;
+		  padding-top: 30px;
+		  padding-bottom: 30px;
+		  font-family: 'Slabo 27px', serif;
+		  line-height: 1.35;
+	}
+	
+	.topicButton{
+		padding-top: 5px;
+		  padding-right: 10px;
+		  padding-bottom: 5px;
+		  padding-left: 10px;
+		  font-size: 10px;
+	}
+	
+	.socialHome{
+		display: block;
+		text-align:  center;
+	}
+	
+	.footerLogo{
+		color: #858585;
+		font-weight: normal;
+		font-size: 0.88889rem;
+		text-align: center;
+		font-size: 25px;
+		display: block;
+		margin: 0;
+	}
+	.footerWrapper p{
+	 	margin: 0;
+	 	text-align: center;
+	}
+	
+	.quizeContentTitle{
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	
+	.quizContentTitleAdjust{
+		margin-top: 20px;	
+	}
+	
+	.imageDecoration {
+	  width: 58px;
+	  height: 50px;
+	}
+	
+	h2.topicTitle{
+		  font-family: 'Glegoo', serif!important;
+		  background-color: white;
+		  font-size: 20px;
+		  border-width: 4px;
+		  border-bottom-style: double;
+		  color: #295E6B;
+	}
+	
+	.quizePanel{
+		margin-left: 5px;
+		margin-right: 5px;
+		-webkit-box-shadow: 12px 3px 131px 5px rgba(0,0,0,0.25);
+		-moz-box-shadow: 12px 3px 131px 5px rgba(0,0,0,0.25);
+		box-shadow: 12px 3px 131px 5px rgba(0,0,0,0.25);
+	}
+	
+	.questionPanel{
+		min-height: 120px;
+	}
+	
+	.container input[type="text"],.container input[type="password"],.container input[type="email"],.container input[type="number"]{
+    border-radius: 2px;
+    margin: 0 0 1.5em 0;
+    color: rgba(220, 135, 9, 0.91);
+    font-weight: 500;
+    font-size: 18px;
+    font-family: 'Glegoo', serif !important;
+	}
+	
+	.btnMgn{margin-bottom: 0; margin-top: 25px;padding: 10px 25px;}
+	
+	.forgotPwd{
+	    position: absolute;
+	    right: 75px;
+	    bottom: 80px;
+	    color: #CEDE08 !important;
+	    overflow: hidden;
+	}
+	
+	#adminForm ::-webkit-input-placeholder{
+	    color: rgba(220, 135, 9, 0.91);
+	    font-weight: 500;
+	    font-size: 14px !important;
+	    text-transform: capitalize;
+	    font-family: 'Glegoo', serif !important;
+	    letter-spacing: 2px;
+	}
+
+}
+
+@media only screen and (max-width: 40em) { 
+	.topicButton{
+		padding-top: 10px;
+		  padding-right: 15px;
+		  padding-bottom: 10px;
+		  padding-left: 15px;
+		  font-size: 14px;
+	}
+	
+	.socialHome{
+		text-align: center;
+	}
+	.footerLogo{
+		color: #858585;
+		font-weight: normal;
+		font-size: 0.88889rem;
+		text-align: center;
+		font-size: 25px;
+		display: block;
+		margin: 0;
+	}
+	
+	.footerWrapper p{
+	 	margin: 0;
+	 	text-align: center;
+	}
+	
+	.quizeContentTitle{
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	
+	.quizContentTitleAdjust{
+		margin-top: 20px;	
+	}
+	
+	
+	.quizeContentTitle h2{
+		font-size: 15px;
+	}
+	
+	h2.topicTitle{
+		  font-family: 'Glegoo', serif!important;
+		  background-color: white;
+		  font-size: 20px;
+		  border-width: 4px;
+		  border-bottom-style: double;
+		  color: #295E6B;
+	}
+	.imageDecoration {
+	  width: 58px;
+	  height: 50px;
+	}
+	
+	.quizePanel{
+		margin-left: 5px;
+		margin-right: 5px;
+		-webkit-box-shadow: 12px 3px 131px 5px rgba(0,0,0,0.25);
+		-moz-box-shadow: 12px 3px 131px 5px rgba(0,0,0,0.25);
+		box-shadow: 12px 3px 131px 5px rgba(0,0,0,0.25);
+	}
+	
+	.questionPanel{
+		min-height: 120px;
+	}
+	
+	
+	
+	
+	.loginHeader{
+		background-color: #E8EBF2;
+		border-radius: 10px 10px 0px 0px;
+	    margin-top: 40px;
+	    margin-left: 10px;
+	    margin-right: 10px;
+	    padding-top: 20px;
+	    padding-bottom: 10px;
+	    padding-left: 10px;
+	    padding-right: 10px;
+	    text-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0px 2px 0 rgba(0, 0, 0, .5);
+	    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, .2), 0 3px 0 #fff, 0 4px 0 rgba(0, 0, 0, .2), 0 6px 0 #fff, 0 7px 0 rgba(0, 0, 0, .2);
+	}
+	
+	.loginHeader h3{
+	    letter-spacing: 4px;
+	    font-size: 15px;
+	    margin: 0;
+	    color: #4cc5f3;
+	}
+	
+	
+	.loginPanelDesign {
+		background-color: #F3F6FB;
+	    margin-left: 10px;
+	    margin-right: 10px;
+	    padding-bottom: 10px;
+	    padding-left: 10px;
+	    padding-right: 10px;
+	    border-radius: 0px 0px 10px 10px;
+	    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, .2), 0 3px 0 #fff, 0 4px 0 rgba(0, 0, 0, .2), 0 6px 0 #fff, 0 7px 0 rgba(0, 0, 0, .2);
+	}
+	
+	
+}
+
+
+@media only screen and (min-width: 40.063em) { 
+	.topicButton{
+		padding-top: 10px;
+		  padding-right: 15px;
+		  padding-bottom: 10px;
+		  padding-left: 15px;
+		  font-size: 14px;
+	}
+	
+	.socialHome{
+		text-align: right;
+	}
+	
+	.footerLogo{
+		color: #858585;
+		font-weight: normal;
+		font-size: 0.88889rem;
+		text-align: center;
+		font-size: 25px;
+		display: block;
+		margin: 0;
+	}
+	
+	.footerWrapper p{
+	 	margin: 0;
+	 	text-align: center;
+	}
+	
+	h2{
+		font-size: 1.5rem;
+	}
+	
+	.quizeContentTitle{
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	.quizContentTitleAdjust{
+		margin-top: 20px;	
+	}
+	
+	.imageDecoration {
+	  width: 58px;
+	  height: 50px;
+	}
+	.indicator{
+		width: 45;
+		height: 45;
+		margin-right: 15px;
+	}
+	
+	h2.topicTitle{
+		  font-family: 'Glegoo', serif!important;
+		  background-color: white;
+		  font-size: 30px;
+		  border-width: 4px;
+		  border-bottom-style: double;
+		  color: #295E6B;
+	}
+	
+	.quizePanel{
+		margin-left: 50px;
+		margin-right: 50px;
+		-webkit-box-shadow: 12px 3px 131px 5px rgba(0,0,0,0.25);
+		-moz-box-shadow: 12px 3px 131px 5px rgba(0,0,0,0.25);
+		box-shadow: 12px 3px 131px 5px rgba(0,0,0,0.25);
+	}
+	
+	.questionPanel{
+		min-height: 150px;
+	}
+	
+	
+	.loginHeader{
+		background-color: #E8EBF2;
+		border-radius: 10px 10px 0px 0px;
+	    margin-left: 10px;
+	    margin-right: 10px;
+	    padding-top: 20px;
+	    padding-bottom: 10px;
+	    padding-left: 10px;
+	    padding-right: 10px;
+	    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, .2), 0 3px 0 #fff, 0 4px 0 rgba(0, 0, 0, .2), 0 6px 0 #fff, 0 7px 0 rgba(0, 0, 0, .2);
+	}
+	
+	.loginHeader h3{
+	    letter-spacing: 4px;
+	    font-size: 15px;
+	    margin: 0;
+	    color: #4cc5f3;
+	}
+	
+	
+	.loginPanelDesign {
+		background-color: #F3F6FB;
+	    margin-left: 10px;
+	    margin-right: 10px;
+	    padding-bottom: 10px;
+	    padding-left: 10px;
+	    padding-right: 10px;
+	    border-radius: 0px 0px 10px 10px;
+	    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, .2), 0 3px 0 #fff, 0 4px 0 rgba(0, 0, 0, .2), 0 6px 0 #fff, 0 7px 0 rgba(0, 0, 0, .2);
+	}
+	
+} 
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) { 
+	
+		
+	.paddingAdjust{
+	  padding-left: 50px;
+	  padding-right: 50px;
+	}
+	
+	.socialHome{
+		text-align: right;
+	}
+	.footerLogo{
+	color: #858585;
+	font-weight: normal;
+	font-size: 0.88889rem;
+	display: inline-block;
+	float: left;
+	margin-right: 25px;
+	font-size: 30px;
+	
+	}
+	.logoInline{
+		display: inline-block;
+		margin-bottom: 0;
+		margin-top: 10px;
+		float: left;
+	}
+	
+	.quizeContentTitle{
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	
+	.imageDecoration{
+		width: 65px;
+		height: 60px;
+	}
+	
+	h2.topicTitle{
+		  font-family: 'Glegoo', serif!important;
+		  background-color: white;
+		  font-size: 30px;
+		  border-width: 4px;
+		  border-bottom-style: double;
+		  color: #295E6B;
+	}
+	
+	
+	
+	.loginHeader{
+	    margin-top: 40px;
+	    margin-left: 10px;
+	    margin-right: 10px;
+	    padding-top: 20px;
+	    padding-bottom: 10px;
+	    padding-left: 10px;
+	    padding-right: 10px;
+	    text-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0px 2px 0 rgba(0, 0, 0, .5);
+	    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, .2), 0 3px 0 #fff, 0 4px 0 rgba(0, 0, 0, .2), 0 6px 0 #fff, 0 7px 0 rgba(0, 0, 0, .2);
+	    
+	}
+	
+	.loginHeader h3{
+	    letter-spacing: 4px;
+	    font-size: 15px;
+	    margin: 0;
+	    color: #4cc5f3;
+	}
+	
+	
+	.loginPanelDesign {
+		background-color: #F3F6FB;
+	    margin-left: 10px;
+	    margin-right: 10px;
+	    padding-bottom: 10px;
+	    padding-left: 10px;
+	    padding-right: 10px;
+	    border-radius: 0px 0px 10px 10px;
+	    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, .2), 0 3px 0 #fff, 0 4px 0 rgba(0, 0, 0, .2), 0 6px 0 #fff, 0 7px 0 rgba(0, 0, 0, .2);
+	}
+	
+} /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+
+@media only screen and (min-width: 64.063em) { 
+	
+	
+	.paddingAdjust{
+	  padding-left: 50px;
+	  padding-right: 50px;
+	}
+	
+	.topicButton{
+		padding-top: 1rem;
+	  padding-right: 2rem;
+	  padding-bottom: 1.0625rem;
+	  padding-left: 2rem;
+	  font-size: 1rem;
+	}
+	.socialHome{
+		text-align: right;
+		padding: 10px;
+	}
+	.footerLogo{
+		color: #858585;
+		font-weight: normal;
+		font-size: 0.88889rem;
+		display: inline-block;
+		float: left;
+		margin-right: 25px;
+	  	font-size: 30px;
+		
+	}
+	.logoInline{
+		display: inline-block;
+		margin-bottom: 0;
+		margin-top: 10px;
+		float: left;
+	}
+	.footerWrapper p{
+	 	margin: 0;
+	 	text-align: left;
+	}
+	
+	.quizeContentTitle{
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	
+	.imageDecoration{
+		width: 65px;
+		height: 60px;
+	}
+	
+	h2.topicTitle{
+		  font-family: 'Glegoo', serif!important;
+		  background-color: white;
+		  font-size: 30px;
+		  border-width: 4px;
+		  border-bottom-style: double;
+		  color: #295E6B;
+	}
+} 
+
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+	
+	
+	.paddingAdjust{
+	  padding-left: 50px;
+	  padding-right: 50px;
+	}
+	
+	.topicButton{
+	  padding-top: 1rem;
+	  padding-right: 2rem;
+	  padding-bottom: 1.0625rem;
+	  padding-left: 2rem;
+	  font-size: 1rem;
+	  
+	}
+	.socialHome{
+		text-align: right;
+		padding: 10px;
+	}
+	.footerLogo{
+		color: #858585;
+		font-weight: normal;
+		font-size: 0.88889rem;
+		display: inline-block;
+		float: left;
+		margin-right: 25px;
+	  	font-size: 30px;
+		
+	}
+	.logoInline{
+		display: inline-block;
+		margin-bottom: 0;
+		margin-top: 10px;
+		float: left;
+	}
+	
+	.footerWrapper p{
+	 	margin: 0;
+	 	text-align: left;
+	}
+	
+	.quizeContentTitle{
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	
+	.imageDecoration{
+		width: 65px;
+		height: 60px;
+	}
+	
+	.topicTitle{
+		  font-family: 'Glegoo', serif!important;
+		  background-color: lightgray;
+		  font-size: 30px;
+		  border-width: 4px;
+		  border-bottom-style: double;
+		  color: #295E6B;
+	}
+	
+	.loginHeader{
+		background-color: rgba(0, 0, 0, 0.70);
+	    border-radius: 6px 6px 0 0;
+	    margin-left: 40px;
+	    margin-right: 40px;
+	    padding-top: 25px;
+	    padding-bottom: 25px;
+	    padding-left: 20px;
+	    padding-right: 20px;
+	    box-shadow: none;
+   }
+	
+	
+	.loginPanelDesign {
+	    background-color: rgba(0, 0, 0, 0.70);
+	    margin-left: 40px;
+	    margin-right: 40px;
+	    padding-bottom: 20px;
+	    padding-left: 20px;
+	    padding-right: 20px;
+	    border-radius: 0px 0px 6px 6px;
+	    box-shadow: none;	
+	}
+	
+} 
+
+
+@media only screen and (min-width: 90.063em) { } /* min-width 1441px, xlarge screens */
+
+@media only screen and (min-width: 90.063em) and (max-width: 120em) { } /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+
+
+@media only screen and (min-width: 120.063em) { } /* min-width 1921px, xxlarge screens */
+
+
+
+
+
+
+.socialHome .inline-list {
+  display: inline-block;
+}
+
+.boxWrapper{
+	
+  	text-align: center;
+  	display: block;
+  	border-style: solid;
+	  border-width: 1px;
+	  border-color: #d8d8d8;
+	  margin-bottom: 1.25rem;
+	  padding: 1.25rem;
+	  background: #f2f2f2;
+	  color: #333;
+}
+
+.boxWrapper h2, 
+.boxWrapper p{
+	font-family: 'Glegoo', serif !important;
+}
+
+.circleIcon{
+	width: 82px;
+  	height: 82px;
+  	overflow: hidden;
+	border-radius: 100%;
+	display: inline-block;
+	font-size: 0px;
+	cursor: pointer;
+	box-shadow: 0 0 0 3px rgb(85, 157, 239);
+}
+
+.technologyIcon{
+	width: 82px;
+  	height: 82px;
+  	overflow: hidden;
+	border-radius: 100%;
+	display: inline-block;
+	font-size: 0px;
+	cursor: pointer;
+}
+
+.footerWrapper{
+	background-color: #222;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	text-align: center;
+}
+
+.footerWrapper:before {
+  content: "";
+  display: table;
+  clear: both;
+}
+.footerWrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.copyright{
+	margin: 6px 0 0;
+	font-size: 0.66667rem;
+	color: #666;
+	display: block;
+}
+
+
+.quizContentTitleAdjust{
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-top: 20px;	
+}
+
+.topicRow{
+	border: 1px solid #f2f2f2;
+	padding: 10px;
+	display: block;
+}
+
+.quizeContentTitle:hover .topicRow{
+	border: 1px solid #00ceff !important;
+	cursor: pointer;
+	font-size: 25px;
+}
+
+
+.loginHeader h3{
+	text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 35px;
+    margin: 0;
+    color: #4cc5f3;
+    font-family: 'Glegoo', serif !important;
+    text-shadow: 2px 0px 3px rgb(0, 225, 253);
+}
+
+.msg{
+	font-size: 12px !important;
+    font-family: 'Glegoo', serif !important;
+    color: #DE2525;
+    text-decoration: blink;
+    text-transform: uppercase;
+    word-spacing: 5px;
+    letter-spacing: 5px;
+}
+
+.error{
+	font-size: 11px !important;
+    color: #DE2525;
+    text-decoration: blink;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    font-family: 'Glegoo', serif !important;
+}
+
+	.container input[type="text"],.container input[type="password"],.container input[type="email"],.container input[type="number"]{
+	    border-radius: 2px;
+	    margin: 0 0 1.5em 0;
+	    color: rgba(220, 135, 9, 0.91);
+	    font-weight: 500;
+	    font-size: 18px;
+	    font-family: 'Glegoo', serif !important;
+	}
+	
+	.btnMgn{margin-bottom: 0; margin-top: 25px;padding: 10px 25px;}
+	
+	.forgotPwd{
+	    position: absolute;
+	    right: 75px;
+	    bottom: 80px;
+	    color: #CEDE08 !important;
+	    overflow: hidden;
+	}
+	
+	#adminForm ::-webkit-input-placeholder{
+	    color: rgba(220, 135, 9, 0.91);
+	    font-weight: 500;
+	    font-size: 14px !important;
+	    text-transform: capitalize;
+	    font-family: 'Glegoo', serif !important;
+	    letter-spacing: 2px;
+	}
+	
+	/* **********************  CSS for list of sets ************************* */
+	.buttons
+	{
+	  display: inline-block;
+	  background: #eeeeee; /* Old browsers */
+	  background: -moz-linear-gradient(top, #eeeeee 0%, #eeeeee 100%); /* FF3.6+ */
+	  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
+	  background: -webkit-linear-gradient(top, #eeeeee 0%,#eeeeee 100%); /* Chrome10+,Safari5.1+ */
+	  background: -o-linear-gradient(top, #eeeeee 0%,#eeeeee 100%); /* Opera11.10+ */
+	  background: -ms-linear-gradient(top, #eeeeee 0%,#eeeeee 100%); /* IE10+ */
+	  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+	  background: linear-gradient(top, #eeeeee 0%,#eeeeee 100%); /* W3C */
+	  padding-left: 20px;
+	  padding-right: 10px;
+	  margin-top: 0.5em;
+	  margin-bottom: 0.5em;
+	  margin-left: 0px;
+	  margin-right: 0px;
+	  font: -webkit-small-control;
+      font-size: 16px;
+	  text-decoration: none;
+	  color: #333;
+	  border-radius: .2em;
+	}
+	
+	.buttons:before
+	{
+	    float: left;
+	    width: 1em;
+	    text-align: center;
+	    font-size: 1em;
+	    margin: 0 0.5em 0 -1em;
+	    padding: 0 .2em;
+	    pointer-events: none;
+	}
+	
+	.edit:before   { content: "\270E"; }
+	.delete:before { content: "\2718";}
+	.save:before {content: "\2714";}
+	
+  .setlistFontStyle{
+    font-size: 16px;
+    margin-top: 0.5em
+  }
+  
+  .setRowContainer{
+  	border: 1px solid #f2f2f2;
+  	margin-bottom: 15px !important;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .setRowContainer:hover{
+	border: 1px solid #00ceff !important;
+	cursor: pointer;
+ }
+ .questionSetHeader{
+    background: #F2F2F2;
+    padding: 8px 0;
+    border-radius: 0;
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+ }
+ .questionSetHeader h5{
+ 	color: #7B7B7B;
+    font-weight: 600;
+ }
+ 
+ .alert-box {
+    padding: 0.333rem;
+}
+  
