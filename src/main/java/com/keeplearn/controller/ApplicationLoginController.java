@@ -17,18 +17,10 @@ import com.keeplearn.util.Constants;
 @Controller
 public class ApplicationLoginController {
 
-	/*@RequestMapping(value="login", method = RequestMethod.POST)
-	public String login(@ModelAttribute("userServiceBean") UserServiceBean userService, ModelMap modelMap){
-		
-		if("santosh@kumar".equals(userService.getUserEmail()) && "123".equals(userService.getUserPassword().toString())){
-			return "adminHome";
-		}
-		return "error";
-	}
-	*/
+	
 	
 	@RequestMapping(value="login", method = RequestMethod.GET)
-	public String login(@RequestParam(value="error", required=false)String error, @RequestParam(value="logout",required=false)String logout, @RequestParam(value="urlHit",required=false)String urlHit ,ModelMap model, HttpServletRequest request){
+	public String login(@RequestParam(value="login_error", required=false)String error, @RequestParam(value="logout",required=false)String logout, @RequestParam(value="urlHit",required=false)String urlHit ,ModelMap model, HttpServletRequest request){
 		
 		String reffere = request.getHeader("referer");
 		

@@ -12,12 +12,22 @@
 		    <!-- <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li> -->
 		  </ul>
 		
+			 
+			
+		
 		  <section class="top-bar-section">
 		    <ul class="right">
 		    
 		    <c:choose>
 		    	<c:when test="${not empty 'userDetails'}">
-		    		<li><a href="${pageContext.request.contextPath}/j_spring_security_logout" data-reveal-id="signUpForm">${userDetails}</a></li>
+		    		<li>
+		    			<c:url var="logoutUrl" value="/logout"/>
+						<form action="${logoutUrl}" method="post">
+						  <input type="submit" value="${userDetails}" />
+						  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+						</form>
+		    		
+		    		</li>
 		    	</c:when>
 		    	<c:otherwise>
 		     		<li><a href="#" data-reveal-id="loginForm">Login</a></li>

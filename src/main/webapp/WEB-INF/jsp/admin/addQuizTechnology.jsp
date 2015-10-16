@@ -1,14 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-</head>
-<body>
 
 	<div class="row rowAdjust">
 		<div class="large-8 columns large-centered">
@@ -36,18 +28,19 @@
 			    </label>
 
 			    <label>Image Name
-			    	<form:input path="imageName" placeholder="/webapp/foundation/images/abc.jpg" required="required"/>
+			    	<form:input path="imageName" placeholder="abc.jpg" required="required"/>
 			    </label>
 			    
 			    <label>Short Details
 			    	<form:textarea path="shortDetails" placeholder="Test Your Knowledge" required="required"/>
 			    </label>
+			   
+			   	<input type="hidden" name="${_csrf.parameterName}"   value="${_csrf.token}" />
 			    
 			    <input type="submit" value="submit" class="button right"/>
+			    
 			    
 			  </fieldset>
 			</form:form>
 		</div>
 	</div>
-</body>
-</html>
