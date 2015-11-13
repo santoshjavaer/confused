@@ -42,6 +42,8 @@ public class QuestionSetModel implements Serializable {
 	@JoinColumn(name="topic_id")
 	private QuizTopicModel quizTopicModel;
 	
+
+	
 	@ManyToMany(cascade = CascadeType.ALL , fetch = FetchType.LAZY)
 	@JoinTable(
 			name = "question_set_mapping",

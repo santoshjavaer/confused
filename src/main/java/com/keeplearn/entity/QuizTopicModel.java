@@ -18,18 +18,18 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.persistence.UniqueConstraint;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import com.keeplearn.model.CommonAdaptor;
 
 /**
  * @author santosh
  *
  */
 @Entity
-@Table(name="technology_topic")
-public class QuizTopicModel extends CommonAdaptor implements Serializable{
+@Table(name="technology_topic" , uniqueConstraints = @UniqueConstraint(columnNames = {"topic_name", "tech_id"}))
+public class QuizTopicModel implements Serializable{
 
 	private static final long serialVersionUID = 1570848934599013413L;
 	@GeneratedValue
@@ -102,13 +102,13 @@ public class QuizTopicModel extends CommonAdaptor implements Serializable{
 	public void setQuestionSetModels(Set<QuestionSetModel> questionSetModels) {
 		this.questionSetModels = questionSetModels;
 	}
-	@Override
+	/*@Override
 	public String toString() {
 		return "QuizTopicModel [id=" + id + ", topicName=" + topicName
 				+ ", topicImage=" + topicImage + ", shortDetails="
 				+ shortDetails + ", multipartFile=" + multipartFile
 				+ ", technology=" + technology + ", questionSetModels="
 				+ questionSetModels + "]";
-	}
+	}*/
 
 }

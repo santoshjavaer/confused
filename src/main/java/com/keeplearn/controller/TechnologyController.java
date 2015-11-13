@@ -11,7 +11,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -25,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.keeplearn.entity.QuizTechModel;
+import com.keeplearn.exception.DuplicateDataException;
 import com.keeplearn.service.TechnologyService;
 import com.keeplearn.util.Constants;
 
@@ -65,38 +65,34 @@ public class TechnologyController implements Constants{
 	}
 	
 	@RequestMapping(value = "addQuizTech" , method = RequestMethod.POST)
-	public String addNewQuizTitle(@ModelAttribute("quizTechModel") QuizTechModel quizTechModel , HttpSession session, ModelMap modelMap , RedirectAttributes redirectAttributes){
+	public String addNewTechnology(@ModelAttribute("quizTechModel") QuizTechModel quizTechModel , HttpSession session, ModelMap modelMap , RedirectAttributes redirectAttributes){
 		
-		if(!quizTechModel.getMultipartFile().isEmpty()){
-			try{
-				
-				byte []bytes = quizTechModel.getMultipartFile().getBytes();
-				String path = session.getServletContext().getRealPath("/foundation/images");
-				path = path+File.separator+quizTechModel.getImageName();
-				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File(path)));
-				stream.write(bytes);
-				stream.flush();
-				stream.close();
-				
-				QuizTechModel techModel = technologyService.addNewTechnology(quizTechModel);
-				
-				modelMap.addAttribute("quizTechModel", techModel);
-				modelMap.addAttribute(DYNAMIC_PAGE, SHOW_NEW_QUIZ_DESCRIPTION);
-				modelMap.addAttribute(DESCRIBE,"TECHNOLOGY");
-				modelMap.addAttribute(COMMON_ATTRIBUTE, quizTechModel);
-				modelMap.addAttribute(DYNAMIC_MESSAGE, "Technology Added Successfully..");
-			}
-			catch(ConstraintViolationException constraintViolationException){
-				constraintViolationException.printStackTrace();
-				return redirectMethod(redirectAttributes,"addQuizTech","Duplicate Entry");
-			}
-			catch(Exception exception){
-				exception.printStackTrace();
-				return redirectMethod(redirectAttributes, "addQuizTech", "Oops Some Problem Occure try again.");
-			}
-		}
-		else{
+		if(quizTechModel.getMultipartFile().isEmpty()){
 			return redirectMethod(redirectAttributes, "addQuizTech" , "Oops Some Problem Occure try again.");
+		}
+		
+		try{
+			
+			byte []bytes = quizTechModel.getMultipartFile().getBytes();
+			String path = session.getServletContext().getRealPath("/foundation/images");
+			path = path+File.separator+quizTechModel.getImageName();
+			BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File(path)));
+			stream.write(bytes);
+			stream.flush();
+			stream.close();
+			
+			QuizTechModel techModel = technologyService.addNewTechnology(quizTechModel);
+			
+			modelMap.addAttribute("quizTechModel", techModel);
+			modelMap.addAttribute(DYNAMIC_PAGE, SHOW_NEW_QUIZ_DESCRIPTION);
+			modelMap.addAttribute(DESCRIBE,"TECHNOLOGY");
+			modelMap.addAttribute(COMMON_ATTRIBUTE, quizTechModel);
+			modelMap.addAttribute(DYNAMIC_MESSAGE, "Technology Added Successfully..");
+		}catch(DuplicateDataException duplicateDataException){
+			return redirectMethod(redirectAttributes,"addQuizTech","Duplicate Entry");
+		}
+		catch(Exception exception){
+			return redirectMethod(redirectAttributes, "addQuizTech", "Oops Some Problem Occure try again.");
 		}
 		
 		return ADMIN_WELCOME;
@@ -111,9 +107,7 @@ public class TechnologyController implements Constants{
 	@RequestMapping(value = "getTechnologyList" , method = RequestMethod.GET)
 	public String getTechnologyList(ModelMap modelMap){
 		
-		
 		List<QuizTechModel> techModels = technologyService.getTechnologyList();
-		
 		modelMap.addAttribute(COMMON_ATTRIBUTE,techModels);
 		modelMap.addAttribute(DYNAMIC_PAGE, TECHNOLOGY_SET_LIST);
 		return ADMIN_WELCOME;

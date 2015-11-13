@@ -11,7 +11,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
-import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -25,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.keeplearn.entity.QuizTopicModel;
+import com.keeplearn.exception.DuplicateDataException;
 import com.keeplearn.service.TechnologyService;
 import com.keeplearn.service.TopicService;
 import com.keeplearn.util.Constants;
@@ -74,39 +74,39 @@ public class TopicController implements Constants {
 	@RequestMapping(value="addTopic" , method = RequestMethod.POST)
 	public String addNewQuizTopic(@ModelAttribute("quizTopic") QuizTopicModel quizTechTopicModel, HttpSession session, ModelMap modelMap , RedirectAttributes redirectAttributes){
 	
-		if(!quizTechTopicModel.getMultipartFile().isEmpty()){
-			try{
-				
-				byte []bytes = quizTechTopicModel.getMultipartFile().getBytes();
-				String path = session.getServletContext().getRealPath("/foundation/images");
-				path = path+File.separator+quizTechTopicModel.getTopicImage();
-				System.out.println("Path  : "+path);
-				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File(path)));
-				stream.write(bytes);
-				stream.flush();
-				stream.close();
-				
-				
-				topicService.addNewQuizTopic(quizTechTopicModel);
-				modelMap.addAttribute(DYNAMIC_MESSAGE, "Topic Added Successfully..");
-				
-			}
-			catch(ConstraintViolationException constraintViolationException){
-				constraintViolationException.printStackTrace();
-				return redirectMethod(redirectAttributes, "addTopic", "Duplicate Topic");
-			}
-			catch(Exception exception){
-				exception.printStackTrace();
-				return redirectMethod(redirectAttributes, "addTopic", "Oops some problem occured try again");
-			}
-		}
-		else{
+		
+		if(quizTechTopicModel.getMultipartFile().isEmpty()){
 			redirectMethod(redirectAttributes, "addTopic", "Oops some problem occured try again");
 		}
 		
-		modelMap.addAttribute(DYNAMIC_PAGE, SHOW_NEW_QUIZ_DESCRIPTION);
-		modelMap.addAttribute(DESCRIBE,"TOPIC");
-		modelMap.addAttribute(COMMON_ATTRIBUTE, quizTechTopicModel);
+		try{
+			
+			byte []bytes = quizTechTopicModel.getMultipartFile().getBytes();
+			String path = session.getServletContext().getRealPath("/foundation/images");
+			path = path+File.separator+quizTechTopicModel.getTopicImage();
+			System.out.println("Path  : "+path);
+			BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File(path)));
+			stream.write(bytes);
+			stream.flush();
+			stream.close();
+			
+			topicService.addNewQuizTopic(quizTechTopicModel);
+
+			modelMap.addAttribute(DYNAMIC_MESSAGE, "Topic Added Successfully..");
+			modelMap.addAttribute(DYNAMIC_PAGE, SHOW_NEW_QUIZ_DESCRIPTION);
+			modelMap.addAttribute(DESCRIBE,"TOPIC");
+			modelMap.addAttribute(COMMON_ATTRIBUTE, quizTechTopicModel);
+
+			
+		}
+		catch(DuplicateDataException duplicateDataException){
+			return redirectMethod(redirectAttributes, "addTopic", "Duplicate Topic");
+		}
+		catch(Exception exception){
+			exception.printStackTrace();
+			return redirectMethod(redirectAttributes, "addTopic", "Oops some problem occured try again");
+		}
+		
 		return ADMIN_WELCOME;
 		
 	}

@@ -11,27 +11,20 @@
 	<div class="row rowAdjust">
 		<div class="large-8 columns large-centered">
 			
-			<form:form action="createSetForQuestion" method="post" commandName="setMapping">
+			<form:form action="createSet" method="post" commandName="commonObject">
 			  <fieldset>
 			    <legend>Create Set</legend>
 					
-				<label>Technology Name
-					<form:select path="technologyId" id="technologyId" required="required">
-						<form:option value="-1" label="--- Select the technology---"/>
-						<form:options items="${technologyMap}"/>
-					</form:select>
-				</label>
-					
 			    <label>Topic Name
-					<form:select path="topicId" id="topicId" class="required">
+					<form:select path="quizTopicModel.id" id="topicId" class="required">
 						<form:option value="-1" label="--- Topic ---" />
-						<form:options items="${topic}"/>
+						<form:options items="${topicMap}"/>
 					</form:select>
 			    </label>
-			  	
-			  	<label>Set Label
-			  		<form:input path="setLable" required="required"/>
-			  	</label>
+			    
+			    <label>Set Name
+					<form:input path="seriesName" required="required"/>
+				</label>
 			  	
 			    <input type="submit" value="Continue" class="button right"/>
 			    

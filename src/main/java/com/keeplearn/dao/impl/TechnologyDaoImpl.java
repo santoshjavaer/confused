@@ -14,11 +14,14 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Repository;
 
 import com.keeplearn.dao.TechnologyDoa;
 import com.keeplearn.entity.QuizTechModel;
+import com.keeplearn.exception.DuplicateDataException;
 
 /**
  * @author santosh.chourasiya
@@ -36,11 +39,24 @@ public class TechnologyDaoImpl implements TechnologyDoa {
 		
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
-		session.saveOrUpdate(model);
-		tx.commit();
-		Serializable serializable  = session.getIdentifier(model);
-		model.setId((Integer)serializable);
-		session.close();
+		
+		try{
+
+			session.saveOrUpdate(model);
+			tx.commit();
+			Serializable serializable  = session.getIdentifier(model);
+			model.setId((Integer)serializable);
+			
+		}catch(DataIntegrityViolationException dataIntegrityViolationException){
+			tx.rollback();
+			throw new DuplicateDataException("Duplicate Data"+dataIntegrityViolationException);
+		}catch(ConstraintViolationException constraintViolationException){
+			tx.rollback();
+			throw new DuplicateDataException("Duplicate Data"+constraintViolationException);
+		}finally{
+			session.close();
+		}
+		
 		return model;
 	}
 

@@ -126,7 +126,7 @@ public class QuizTechModel extends CommonAdaptor implements Serializable{
 	public void setQuizTopicModels(Set<QuizTopicModel> quizTopicModels) {
 		this.quizTopicModels = quizTopicModels;
 	}
-
+/*
 	@Override
 	public String toString() {
 		return "QuizTechModel [id=" + id + ", technologyName=" + technologyName
@@ -134,5 +134,5 @@ public class QuizTechModel extends CommonAdaptor implements Serializable{
 				+ imageName + ", shortDetails=" + shortDetails
 				+ ", quizTopicModels=" + quizTopicModels + "]";
 	}
-	
+*/	
 }

@@ -14,14 +14,10 @@
 			    <legend>Create Quiz</legend>
 					
 				<label>Select Technology
-					<form:select path="technologyId" id="technologyId" required="required">
+					<form:select path="id" id="technologyId" required="required">
 						<form:option value="-1" label="--- Select the technology---"/>
 						<form:options items="${technologyMap}"/>
 					</form:select>
-				</label>
-				
-				<label>Set Name
-					<form:input path="seriesName" required="required"/>
 				</label>
 			  	
 			    <input type="submit" value="Continue" class="button right"/>
